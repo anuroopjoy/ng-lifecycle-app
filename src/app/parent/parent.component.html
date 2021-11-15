@@ -1,0 +1,7 @@
+<app-child [name]="data" *ngIf="showChild"></app-child>
+{{ childData }}
+<br />
+<button (click)="changeInput()">Change Input data</button>
+<button (click)="toggleChild()">Toggle Child</button>
+
+<ng-content></ng-content>
