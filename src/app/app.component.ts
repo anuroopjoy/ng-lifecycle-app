@@ -28,7 +28,7 @@ export class AppComponent
     AfterViewChecked
 {
   title = 'lifecycle-app';
-  data = 'test';
+  data = 'content input';
   childData = '';
   constructor() {
     console.log('%c App component constructor', 'color: blue');

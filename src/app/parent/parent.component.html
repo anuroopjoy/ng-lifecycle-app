@@ -1,7 +1,8 @@
-<app-child [name]="data" *ngIf="showChild"></app-child>
+<ng-container *ngIf="showChild">
+  <app-child [name]="data"></app-child>
+  <ng-content></ng-content>
+</ng-container>
 {{ childData }}
 <br />
 <button (click)="changeInput()">Change Input data</button>
 <button (click)="toggleChild()">Toggle Child</button>
-
-<ng-content></ng-content>

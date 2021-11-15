@@ -34,7 +34,7 @@ export class ParentComponent
   @ViewChild(ChildComponent) viewComponent!: ChildComponent;
   @ContentChild(ContentChildComponent) contentComponent!: ContentChildComponent;
   showChild = true;
-  data = 'test';
+  data = 'view input';
   childData = '';
   constructor() {
     console.log('%c Parent component constructor', 'color: red');
@@ -51,8 +51,10 @@ export class ParentComponent
       'color: red',
       this.viewComponent
     );
-    // this.childData = this.viewComponent.name;
-    // console.log('changing parent view with view child data', 'color: red');
+    // setTimeout(() => {
+    //   this.childData = this.viewComponent.name;
+    //   console.log('%c changing parent view with view child data', 'color: red');
+    // });
   }
   ngAfterContentInit(): void {
     console.log(
@@ -60,11 +62,11 @@ export class ParentComponent
       'color: red',
       this.contentComponent
     );
-    this.childData = this.contentComponent.name;
-    console.log(
-      '%c changing parent view with content child data',
-      'color: red'
-    );
+    // this.childData = this.contentComponent.name;
+    // console.log(
+    //   '%c changing parent view with content child data',
+    //   'color: red'
+    // );
   }
   ngDoCheck(): void {
     console.log('%c Parent component ngDoCheck', 'color: red');
