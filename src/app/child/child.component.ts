@@ -11,11 +11,13 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
+  providers: [SharedService],
 })
 export class ChildComponent
   implements
@@ -30,7 +32,7 @@ export class ChildComponent
 {
   @Input() name = '';
 
-  constructor() {
+  constructor(private sharedService: SharedService) {
     console.log(
       '%c Child component constructor, value of name = ',
       'color: cyan',
